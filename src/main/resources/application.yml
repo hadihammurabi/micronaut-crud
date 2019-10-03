@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: employee
+  database:
+    host: localhost
+    user: root
+    pass: root
+    name: companies

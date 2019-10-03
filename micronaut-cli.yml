@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: employee
+---
+testFramework: junit
+sourceLanguage: java
