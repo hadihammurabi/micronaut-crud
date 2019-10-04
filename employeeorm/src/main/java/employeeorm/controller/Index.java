@@ -24,7 +24,7 @@ public class Index {
   public String index(@QueryValue int page, @QueryValue int limit) {
     List<Employee> employee = repository.findAll(page, limit);
     HashMap<String, Object> data = new HashMap<>();
-    data.put("page", Math.ceil(repository.size()/limit) + 1);
+    data.put("page", Math.ceil(repository.size()/limit));
     data.put("data", employee);
     return (new Gson()).toJson(data);
   }
