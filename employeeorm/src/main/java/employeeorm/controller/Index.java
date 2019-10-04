@@ -1,5 +1,9 @@
 package employeeorm.controller;
 
+import java.lang.Math;
+import java.util.HashMap;
+import java.util.List;
+
 import io.micronaut.http.annotation.*;
 import io.micronaut.http.MediaType;
 
@@ -17,8 +21,12 @@ public class Index {
   }
 
   @Get(produces=MediaType.APPLICATION_JSON)
-  public String index() {
-    return (new Gson()).toJson(repository.findAll());
+  public String index(@QueryValue int page, @QueryValue int limit) {
+    List<Employee> employee = repository.findAll(page, limit);
+    HashMap<String, Object> data = new HashMap<>();
+    data.put("page", Math.ceil(repository.size()/limit) + 1);
+    data.put("data", employee);
+    return (new Gson()).toJson(data);
   }
 
 

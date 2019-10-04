@@ -5,7 +5,8 @@ import javax.validation.constraints.NotNull;
 import employeeorm.model.Employee;
 
 public interface EmployeeRepositoryInf {
-    List<Employee> findAll();
+    Long size();
+    List<Employee> findAll(int page, int limit);
     Employee findById(@NotNull Long id);
     // Materi save(@NotNull String kodeMateri, @NotNull String namaMateri);
     // Employee save(@NotNull Employee employee);

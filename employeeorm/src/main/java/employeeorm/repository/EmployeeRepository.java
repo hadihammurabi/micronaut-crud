@@ -23,8 +23,18 @@ public class EmployeeRepository implements EmployeeRepositoryInf {
   }
 
   @Transactional(readOnly = true)
-  public List<Employee> findAll() {
-    TypedQuery<Employee> query = manager.createQuery("from Employee", Employee.class);
+  public Long size() {
+    Long count = manager.createQuery("select count(*) from Employee", Long.class).getSingleResult();
+    System.out.println(count);
+    return count;
+  }
+
+  @Transactional(readOnly = true)
+  public List<Employee> findAll(int page, int limit) {
+    TypedQuery<Employee> query = manager
+      .createQuery("from Employee", Employee.class)
+      .setFirstResult(page > 1 ? page * limit - limit : 0)
+      .setMaxResults(limit);
     return query.getResultList();
   }
 
