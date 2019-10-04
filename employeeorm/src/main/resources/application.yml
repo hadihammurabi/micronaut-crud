@@ -6,10 +6,10 @@ micronaut:
 ---
 datasources:
   default:
-    url: jdbc:mariadb://localhost:3306/companies
-    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:postgresql://localhost:26257/companies
+    driverClassName: org.postgresql.Driver
     username: root
-    password: root
+    password: ""
 jpa:
   default:
     properties:

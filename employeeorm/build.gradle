@@ -36,7 +36,8 @@ dependencies {
 
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     runtimeOnly "com.h2database:h2"
-    runtime "org.mariadb.jdbc:mariadb-java-client:2.4.2"
+    runtime "org.postgresql:postgresql:9.3-1100-jdbc4"
+    // runtime "org.mariadb.jdbc:mariadb-java-client:2.4.2"
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
