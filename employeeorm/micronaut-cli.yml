@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: employeeorm
+---
+testFramework: junit
+sourceLanguage: java
