@@ -25,7 +25,6 @@ public class EmployeeRepository implements EmployeeRepositoryInf {
   @Transactional(readOnly = true)
   public Long size() {
     Long count = manager.createQuery("select count(*) from Employee", Long.class).getSingleResult();
-    System.out.println(count);
     return count;
   }
 
